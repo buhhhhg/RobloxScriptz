@@ -1,0 +1,73 @@
+--[ Actual Discord for Arctic - discord.gg/arcticdh ]--
+--[ Made by Dev_#5201 / C5Hax (nickname is Dev) ]--
+--[ This is 0.1 of ArcticHub Remade, there might be errors in this script, DM Dev_#5201 if there are any! ]--
+
+-- Enables / Disables loading the Original Arctic Hub.
+local archub = false
+
+-- Enables / Disables loading Da Hood Aimlock.
+local DH_Aimlock = false
+
+-- Enables / Disables Da Hood Auto Stomp Farm.
+local DH_AutoStompFarm = false
+
+local ID = game.PlaceId
+local StarterUI = game:GetService("StarterGui")
+
+StarterUI:SetCore("SendNotification", {Title = "ArcticHub Remade", Text = "Loaded Arctic Hub Remade, credits in Console!", Icon = "http://www.roblox.com/asset/?id=%39%38%32%34%32%37%30%32%39%35", Duration = 5})
+--[ Arctic Hub (enable/disable)
+if archub == true then
+    loadstring(game:HttpGetAsync("https://polar7.wtf/Arctic/ArcticHub/Loader.txt"))()
+else
+    print("Arctic Hub disabled.")
+end
+--
+
+if ID == 2788229376 then
+    loadstring(game:HttpGetAsync("https://polar7.wtf/Arctic/Arctic.txt"))()
+    print("[ArcticHub Remade] Correct game! Loading Arctic..")
+else
+    print("[ArcticHub Remade] Wrong game! Go back to DH!")
+end
+--
+
+
+if DH_Aimlock == true then
+
+    if ID == 2788229376 then
+        loadstring(game:HttpGetAsync("https://polar7.wtf/Arctic/ArcticLock.txt"))()
+    else
+        print("[ArcticHub Remade] This game isnt Da Hood!")
+    end
+
+else
+    print("[ArcticHub Remade] DH Aimlock is disabled.")
+end
+
+--
+--[ STAND UPRIGHT V3
+if ID == 8540168650 then
+    loadstring(game:HttpGetAsync("https://polar7.wtf/Arctic/ArcticHub/StandUpright.txt"))()
+else
+    print("[ArcticHub Remade] This game isnt Stand Upright!")
+end
+--
+
+--[ DH Auto Stomp Farm [ Group Required ]
+if DH_AutoStomp == true then
+
+    if ID == 2788229376 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Karz1337/Arctic/main/ArcticAutoStompFarm"))()
+        StarterUI:SetCore("SendNotification", {Title = "ArcticHub Remade", Text = "Make sure to join the group!", Icon = "http://www.roblox.com/asset/?id=%39%38%32%34%32%37%30%32%39%35", Duration = 5})
+        --[ Group: https://www.roblox.com/groups/11247010/PolarArctic#!/about
+    else
+        print("[ArcticHub Remade] Wrong game! Go back to DH.")
+    end
+else
+    print("[ArcticHub Remade] DH AutoStomp is disabled.")
+end
+--
+
+--[ Arctic Key
+print("[ArcticHub Remade] If you loaded Arctic, here's the key! https://linkvertise.com/396447/arctic-key1/1")
+print("[ArcticHub Remade] Original Creator of Arctic: Polar / Polarrr#0001")
