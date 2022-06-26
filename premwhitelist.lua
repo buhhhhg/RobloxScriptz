@@ -1,15 +1,20 @@
 local prefix = K5!!
 
-local premUser = {
-  "",
-  ""
+local premUser2 = {
+	"KudaGamer278",
+	""	
 }
+--
 
+local premUser = {
+	"2261300976",
+	""
+}
 --
 
 -- Premium Users
 -- credit to maxbrh1 / MastersMZ | the site i got the code from is https://controlc.com/5a7a6fe2
-LPlayer.Chatted:Connect(function(msg)
+premUser2.Chatted:Connect(function(msg)
 	msg = msg:lower()
 	if string.sub(msg,1,3) == "/e " then
 		msg = string.sub(msg,4)
