@@ -1,4 +1,5 @@
 local prefix = K5!!
+local premOwner = "KudaGamer278"
 
 local premUser2 = {
 	"KudaGamer278",
