@@ -1,4 +1,4 @@
---[[ Games ]]--                                                                                                                                                                                                        
+--[[ Games ]]--
                                                                                                                                                                                                                                                                                                                                                              local SayMSG = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
 ----------------------------------------------------------------------------------\
 local JustBaseplate                                                = 4483381587 --|
