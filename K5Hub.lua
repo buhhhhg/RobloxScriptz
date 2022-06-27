@@ -29,6 +29,7 @@ local RaiseAFlop2                                                  = 9772878203 
 ██      ██ ██   ██ ██████  ███████     ██████     ██        ██     ██████  ███████   ████   ███████  ██  ██  ███████ ███████  ██████   ██ 
 
 ]]--
+
 --[[ Script ]]--
 
 local active = true
@@ -41,7 +42,7 @@ local active = true
 
 if active == true then
 
- SayMSG:FireServer("[K5Hub] Loaded script, Version is V2.1" ,"All")
+ SayMSG:FireServer("[K5Hub] Loaded script, Version is V2.2" ,"All")
 
 
  if ID == JustBaseplate then
