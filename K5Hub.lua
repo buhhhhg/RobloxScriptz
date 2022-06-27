@@ -11,7 +11,7 @@ local PetSimX                                                      = 6284583030 
 local BuildABoat                                                   = 537413528  --|
 local RaiseAFlop2                                                  = 9772878203 --| 
 ----------------------------------------------------------------------------------/
-																																																																																							local ID = game.PlaceID
+																																																																																							local ID = game.PlaceId
 --[[
 
 ██   ██ ███████ ██   ██ ██    ██ ██████  
