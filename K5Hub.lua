@@ -42,7 +42,7 @@ local active = true
 
 if active == true then
 
- SayMSG:FireServer("[K5Hub] Loaded script, Version is V2.2" ,"All")
+ SayMSG:FireServer("[K5Hub] Loaded script, Version is V2.3" ,"All")
 
 
  if ID == JustBaseplate then
