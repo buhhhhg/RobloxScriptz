@@ -74,6 +74,10 @@ if active == true then
  loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
  wait(2.5)
  loadstring(game:HttpGet("https://pastebin.com/raw/iL4NRDux", true))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+ wait(2.5)
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
  end
  --
 
