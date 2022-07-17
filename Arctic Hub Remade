@@ -1,6 +1,6 @@
 --[ Actual Discord for Arctic - discord.gg/arcticdh ]--
 --[ Made by Dev_#5201 / C5Hax (nickname is Dev) ]--
---[ This is 0.1 of ArcticHub Remade, there might be errors in this script, DM Dev_#5201 if there are any! ]--
+--[ This is Version 0.1 of ArcticHub Remade, there might be errors in this script, DM Dev_#5201 if there are any! ]--
 
 -- Enables / Disables loading the Original Arctic Hub.
 local archub = false
