@@ -14,7 +14,7 @@ local sec = tab:Section("Scripts")
 
 sec:Button("Arctic Hub Remade", function()
 	Lib:Notification("GitLoader", "Loaded Arctic Hub Remade.")
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/C5Hax/RobloxScriptz/main/Arctic%20Hub%20Remade"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/C5Hax/RobloxScriptz/main/GitLoader.lua"))()
 end)
 
 sec:Button("K5Hub", function()
@@ -33,6 +33,12 @@ sec:Button("C5Hub Universal", function()
 end)
 --
 local tab2 = win:Tab("Other Scripts/Executors")
+
+local sect2 = tab:Section("Scripts")
+
+sect2:Button("Infinite Yield", function()
+	Lib:Notification("GitLoader", "Loaded Inf Yield.")
+end)
 
 local sec2 = tab:Section("Executors")
 
