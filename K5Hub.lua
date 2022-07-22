@@ -42,7 +42,7 @@ local active = true
 
 if active == true then
 
- SayMSG:FireServer("[K5Hub] Loaded script, Version is V2.4" ,"All")
+ SayMSG:FireServer("[K5Hub] Loaded script, Version is V2.5" ,"All")
 
 
  if ID == JustBaseplate then
@@ -70,8 +70,6 @@ if active == true then
  if ID == Brookhaven then
  SayMSG:FireServer("[K5Hub] Detected that game is: 'Brookhaven RP', Loading scripts.." ,"All")
  loadstring(game:HttpGet('https://raw.githubusercontent.com/topitbopit/rblx/main/jeff_gui.lua', true))()
- wait(2.5)
- loadstring(game:HttpGet("https://raw.githubusercontent.com/C5Hax/RobloxScriptz/main/fates-admin-fixed.lua"))();
  wait(2.5)
  loadstring(game:HttpGet("https://pastebin.com/raw/iL4NRDux", true))()
  wait(2.5)
