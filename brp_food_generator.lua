@@ -38,6 +38,20 @@ function main()
 		end
 	end
 
+	function droptools()
+		for i,v in pairs(lp.Backpack:GetChildren()) do
+			if v:IsA("Tool") then
+				v.Parent = char
+			end
+		end
+		wait()
+		for i,v in pairs(char:GetChildren()) do
+			if v:IsA("Tool") then
+				v.Parent = workspace
+			end
+		end
+	end
+
 	function grabtools()
 		for _, child in ipairs(workspace:GetChildren()) do
 			if char and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then
@@ -112,7 +126,8 @@ function main()
 	wait(1)
 	local Init = library:Init()
 
-	local fs = Init:NewTab("BRP Food Generator - Script by `k5utils`")
+	local fs = Init:NewTab("Main Script")
+	local creds = fs:NewTab("Credits")
 
 	local Section1 = fs:NewSection("Script by `k5utils` on discord!")
 
@@ -144,6 +159,12 @@ function main()
 		Notif:Notify("Started generating", 3, 'information')
 		wait()
 		realrun()
+	end)
+
+	local dtools = fs:NewButton("Drop tools/food", function())
+		droptools()
+		wait()
+		Notif:Notify("Dropped tools!", 3, 'success')
 	end)
 
 	local selectfilter = fs:NewSelector("Filters", "filter here..", {
@@ -228,6 +249,11 @@ function main()
 	local hide = fs:NewKeybind("Show/Hide GUI", Enum.KeyCode.R, function(key)
 		Init:UpdateKeybind(Enum.KeyCode[key])
 	end)
+
+	local infyield = creds:NewLabel("Infinite Yield", "center")
+	local infyield2 = creds:NewLabel("i cant get the developers of infinite yield", "center")
+	local infyield3 = creds:NewLabel("i forgot the names", "center")
+	local infyield4 = creds:NewLabel("uhhh", "center")
 
 	local FinishedLoading = Notif:Notify("Loaded - Script by `k5utils` on discord!", 4, "success")
 end
