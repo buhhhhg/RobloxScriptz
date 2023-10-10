@@ -5,6 +5,7 @@ function main()
 
 	local Wm = library:Watermark("BRP Food Generator | Library Version " .. library.version ..  " | " .. library:GetUsername())
 
+
 	-- setup vars
 	food = {
 		workspace['SnackMachine']['Selection1']['ClickDetector'],
@@ -130,6 +131,7 @@ function main()
 	local creds = fs:NewTab("Credits")
 
 	local Section1 = fs:NewSection("Script by `k5utils` on discord!")
+	Init:UpdateKeybind(Enum.KeyCode.PageUp)
 
 	local start = fs:NewToggle("Start/Stop script", false, function(value)
 		local vers = value and true or false
@@ -246,7 +248,7 @@ function main()
 		Notif:Notify("Loaded IY successfully!", 2, "success")
 	end)
 
-	local hide = fs:NewKeybind("Show/Hide GUI", Enum.KeyCode.R, function(key)
+	local hide = fs:NewKeybind("Show/Hide GUI", Enum.KeyCode.PageUp, function(key)
 		Init:UpdateKeybind(Enum.KeyCode[key])
 	end)
 
