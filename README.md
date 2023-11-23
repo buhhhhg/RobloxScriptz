@@ -1,3 +1,3 @@
-random goofy ahh roblox scripts
+# RobloxScripts
 
-some of them are scripts i made (they are kinda trash ngl)
+Scripts i made.
