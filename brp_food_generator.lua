@@ -253,9 +253,10 @@ function main()
 	end)
 
 	local infyield = creds:NewLabel("Infinite Yield", "center")
-	local infyield2 = creds:NewLabel("i cant get the developers of infinite yield", "center")
-	local infyield3 = creds:NewLabel("i forgot the names", "center")
-	local infyield4 = creds:NewLabel("uhhh", "center")
+	local infyield2 = creds:NewLabel("- Creator: Edge", "center")
+	local infyield3 = creds:NewLabel("- Developer: Moon", "center")
+	local infyield4 = creds:NewLabel("- Developer: Zwolf", "center")
+	local infyield5 = creds:NewLabel("- Developer: Toon", "center")
 
 	local FinishedLoading = Notif:Notify("Loaded - Script by `k5utils` on discord!", 4, "success")
 end
@@ -271,7 +272,7 @@ end
 if game.PlaceId == 369152986 then
 	main()
 else
-	notif("you stupid",'script by `k5utils` on discord',6)
-	notif("you stupid",'this game only works on:',4)
-	notif("you stupid",'Bullying: A Roleplay Story',4)
+	notif("Unsupported Game",'Script by `k5utils` on discord.',6)
+	notif("Unsupported Game",'This game only works on:',4)
+	notif("Unsupported Game",'Bullying: A Roleplay Story',4)
 end
