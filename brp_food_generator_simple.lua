@@ -39,9 +39,9 @@ function run()
 	end
 end
 
-for i=1,8 do
+for i=1,12 do
 	run()
-	wait(.44)
+	wait(2)
 end
 
 grabtools()
