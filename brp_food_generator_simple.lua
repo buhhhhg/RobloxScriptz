@@ -39,11 +39,11 @@ function run()
 	end
 end
 
-for i=1,25 do
+for i=1,55 do
 	run()
 	wait(2)
 end
 
 grabtools()
-wait(1.1)
+wait(2.1)
 humanoid:UnequipTools()
