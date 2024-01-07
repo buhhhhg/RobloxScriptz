@@ -39,7 +39,7 @@ function run()
 	end
 end
 
-for i=1,55 do
+for i=1,150 do
 	run()
 	wait(2)
 end
