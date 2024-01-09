@@ -5,12 +5,24 @@ fire = campfire["FlameTouchPart"]
 
 root = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 
-touchfire = fire["TouchInterest"] -- unused soon(??)
+function notif(title, desc, dur)
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = title,
+		Text = desc,
+		Duration = dur,
+	})
+end
 
 if firetouchinterest then
 	firetouchinterest(fire, root, 1)
 	wait()
 	firetouchinterest(fire, root, 0)
+else
+	notif("Unsupported Game",'Set yourself on fire',5)
+	notif("Unsupported Game",'Script by `k5utils` on discord',5)
+	notif("Unsupported Game",' ',5)
+	notif("Unsupported Game",'This game only works on:',5)
+	notif("Unsupported Game",'Bullying: A Roleplay Story',5)
 end
 
 tempcframe = {}
