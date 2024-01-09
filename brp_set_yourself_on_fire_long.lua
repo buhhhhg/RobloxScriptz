@@ -15,7 +15,7 @@ end
 
 if firetouchinterest then
 	firetouchinterest(fire, root, 1)
-	wait(2)
+	wait(6)
 	firetouchinterest(fire, root, 0)
 else
 	notif("Unsupported Game",'Set yourself on fire',5)
