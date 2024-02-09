@@ -39,11 +39,6 @@ function run()
 	end
 end
 
-for i=1,10 do
-	run()
-	wait(2)
-end
-
 function notif(title, desc, dur)
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = title,
@@ -56,6 +51,12 @@ notif("cuh!!", "Script made by k5utils", 3)
 
 if game.PlaceId == 369152986 then
 	notif("real", "are you going to feed africa or something?", 3)
+
+	for i=1,10 do
+		run()
+		wait(2)
+	end
+
 	grabtools()
 	wait(2.1)
 	humanoid:UnequipTools()
