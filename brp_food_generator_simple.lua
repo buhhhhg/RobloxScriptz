@@ -44,6 +44,22 @@ for i=1,10 do
 	wait(2)
 end
 
-grabtools()
-wait(2.1)
-humanoid:UnequipTools()
+function notif(title, desc, dur)
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = title,
+		Text = desc,
+		Duration = dur,
+	})
+end
+
+notif("cuh!!", "Script made by k5utils", 3)
+
+if game.PlaceId == 369152986 then
+	notif("real", "are you going to feed africa or something?", 3)
+	grabtools()
+	wait(2.1)
+	humanoid:UnequipTools()
+else
+	notif("Unsupported Game",'This game only works on:',4)
+	notif("Unsupported Game",'Bullying: A Roleplay Story',4)
+end
