@@ -45,7 +45,7 @@ frames = {
 while _G.s do
 	for _,frame in pairs(frames) do
 		rpname(frame)
-		wait(0.5)
+		wait(0.2)
 	end
 	wait(0.01)
 end
