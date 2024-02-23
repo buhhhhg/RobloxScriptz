@@ -9,43 +9,28 @@ local function rpname(name)
 	game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
 end
 
-frames = {
-	"[script by dev]",
-	"[script by dev",
-	"[script by de",
-	"[script by d",
-	"[script by ",
-	"[script by",
-	"[script b",
-	"[script ",
-	"[script",
-	"[scrip",
-	"[scri",
-	"[scr",
-	"[sc",
-	"[s",
-	"[",
-	"",
-	"[",
-	"[s",
-	"[sc",
-	"[scr",
-	"[scri",
-	"[scrip",
-	"[script",
-	"[script ",
-	"[script b",
-	"[script by",
-	"[script by d",
-	"[script by de",
-	"[script by dev",
-	"[script by dev]",
-}
+function generateFrames(starting_string)
+    local frames = {}
+    local baseLength = #starting_string
+
+    for i = baseLength, 1, -1 do
+        table.insert(frames, starting_string:sub(1, i))
+    end
+
+    for i = 2, baseLength do
+        table.insert(frames, frames[i])
+    end
+
+    return frames
+end
+
+frames = generateFrames("TTK on top!")
 
 while _G.s do
-	for _,frame in pairs(frames) do
+	for _, frame in pairs(frames) do
+		if _G.s == false then break end
 		rpname(frame)
-		wait(0.2)
+		wait(0.05)
 	end
 	wait(0.01)
 end
