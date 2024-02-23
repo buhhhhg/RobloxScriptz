@@ -1,3 +1,3 @@
 # random scripts i made
 
-Scripts i made.
+scripts i made
