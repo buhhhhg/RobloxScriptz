@@ -1,3 +1,5 @@
+-- github please synchronize your raw.githubusercontent.com page and github.com page for gods sake
+
 repeat wait() until game:IsLoaded()
 
 local function rpname(name)
