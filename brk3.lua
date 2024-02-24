@@ -28,13 +28,13 @@ function generateFrames(starting_string)
     return frames
 end
 
-frames = generateFrames("TTK on top!")
+frames = generateFrames("cant talk, on my mewing streak rn 🤫🧏‍♂️")
 
 while _G.s do
 	for _, frame in pairs(frames) do
 		if _G.s == false then break end
 		rpname(frame)
-		wait(0.05)
+		wait(0.085)
 	end
 	wait(0.01)
 end
