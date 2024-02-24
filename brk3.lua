@@ -1,5 +1,3 @@
--- github please synchronize your raw.githubusercontent.com page and github.com page for gods sake
-
 repeat wait() until game:IsLoaded()
 
 local function rpname(name)
@@ -20,6 +18,10 @@ function generateFrames(starting_string)
     end
 
     for i = 2, baseLength do
+        table.insert(frames, frames[i])
+    end
+
+    for i = #frames, 1, -1 do
         table.insert(frames, frames[i])
     end
 
