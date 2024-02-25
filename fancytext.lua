@@ -32,10 +32,8 @@ local function gentext(input)
 	return output
 end
 
-input = "[Fancy Text] script by Dev!"
-
 while _G.s do
-	frame = gentext(input)
+	frame = gentext(_G.text_input)
 	rpname(frame)
 	wait(0.085)
 end
