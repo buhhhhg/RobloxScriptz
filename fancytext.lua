@@ -16,27 +16,18 @@ end
 
 local function gentext(input)
 	local output = ""
-	for i = 1, string.len(input) do
-		local char = string.sub(input, i, i)
-		local random = math.random(1, 4)
-		if random == 1 then
-			if char ~= nil then
-				output = output .. str1[char]
-			end
-		elseif random == 2 then
-			if char ~= nil then
-				output = output .. str2[char]
-			end
-		elseif random == 3 then
-			if char ~= nil then
-				output = output .. str3[char]
-			end
-		else
-			if char ~= nil then
-				output = output .. str4[char]
-			end
-		end
-	end
+    for char in input:gmatch"." do
+        local random = math.random(1, 4)
+        if random == 1 then
+            output = output .. (str1[char] or char)
+        elseif random == 2 then
+            output = output .. (str2[char] or char)
+        elseif random == 3 then
+            output = output .. (str3[char] or char)
+        else
+            output = output .. (str4[char] or char)
+        end
+    end
 	return output
 end
 
