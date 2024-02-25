@@ -15,11 +15,11 @@ end
 local function gentext(input)
 	local output = ""
 	for char in input:gmatch"." do
-		local random = math.random(1, 2)
+		local random = math.random(1, 3)
 		if random == 1 then
 			output = output .. (str1[char] or char)
 		else
-			output = output .. (str3[char] or char)
+			output = output .. (str2[char] or char)
 		end
 	end
 	return output
