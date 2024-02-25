@@ -28,7 +28,7 @@ function generateFrames(starting_string)
     return frames
 end
 
-frames = generateFrames("cant talk rn, on my mewing streak 🤫🧏")
+frames = generateFrames("FIRE IN THE HOAEL!! 🗣🔥🔥🔥🔥")
 
 while _G.s do
 	for _, frame in pairs(frames) do
