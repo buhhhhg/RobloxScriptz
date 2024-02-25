@@ -20,13 +20,21 @@ local function gentext(input)
 		local char = string.sub(input, i, i)
 		local random = math.random(1, 4)
 		if random == 1 then
-			output = output .. str1[char]
+			if char ~= nil then
+				output = output .. str1[char]
+			end
 		elseif random == 2 then
-			output = output .. str2[char]
+			if char ~= nil then
+				output = output .. str2[char]
+			end
 		elseif random == 3 then
-			output = output .. str3[char]
+			if char ~= nil then
+				output = output .. str3[char]
+			end
 		else
-			output = output .. str4[char]
+			if char ~= nil then
+				output = output .. str4[char]
+			end
 		end
 	end
 	return output
