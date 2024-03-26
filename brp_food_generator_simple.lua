@@ -50,7 +50,7 @@ end
 notif("Credits", "Script made by k5utils on discord", 3)
 
 if game.PlaceId == 369152986 then
-	for i=1,10 do
+	for i=1,30 do
 		run()
 		wait(2)
 	end
@@ -58,6 +58,7 @@ if game.PlaceId == 369152986 then
 	grabtools()
 	wait(2.1)
 	humanoid:UnequipTools()
+	notify("Success", "Finished generating food", 2.5)
 else
 	notif("Unsupported Game",'This game only works on:',4)
 	notif("Unsupported Game",'Bullying: A Roleplay Story',4)
