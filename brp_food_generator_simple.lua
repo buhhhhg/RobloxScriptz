@@ -54,11 +54,11 @@ if game.PlaceId == 369152986 then
 		run()
 		wait(2)
 	end
+	notif("Success", "Finished generating food", 2.5)
 
 	grabtools()
-	wait(2.1)
+	wait(1.1)
 	humanoid:UnequipTools()
-	notif("Success", "Finished generating food", 2.5)
 else
 	notif("Unsupported Game",'This game only works on:',4)
 	notif("Unsupported Game",'Bullying: A Roleplay Story',4)
