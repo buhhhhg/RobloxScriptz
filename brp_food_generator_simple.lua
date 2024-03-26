@@ -47,11 +47,9 @@ function notif(title, desc, dur)
 	})
 end
 
-notif("cuh!!", "Script made by k5utils", 3)
+notif("Credits", "Script made by k5utils on discord", 3)
 
 if game.PlaceId == 369152986 then
-	notif("real", "are you going to feed africa or something?", 3)
-
 	for i=1,10 do
 		run()
 		wait(2)
