@@ -50,7 +50,7 @@ end
 notif("Credits", "Script made by k5utils on discord", 3)
 
 if game.PlaceId == 369152986 then
-	for i=1,30 do
+	for i=1,15 do
 		run()
 		wait(2)
 	end
