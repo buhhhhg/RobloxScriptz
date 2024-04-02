@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded()
 
-local function setname(name)
+function setname(name)
 	args = {
 		[1] = tostring(name)
 	}
@@ -8,16 +8,32 @@ local function setname(name)
 	game:GetService("ReplicatedStorage"):WaitForChild("SetRoleplayName"):InvokeServer(unpack(args))
 end
 
+function notif(title, desc, dur)
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = title,
+		Text = desc,
+		Duration = dur,
+	})
+end
+
 arrow_spinner = {
-	"⬆️ ",
-	"↗️ ",
-	"➡️ ",
-	"↘️ ",
-	"⬇️ ",
-	"↙️ ",
-	"⬅️ ",
-	"↖️ "
+	"⠋",
+	"⠙",
+	"⠹",
+	"⠸",
+	"⠼",
+	"⠴",
+	"⠦",
+	"⠧",
+	"⠇",
+	"⠏"
 }
+
+if _G.s == true then
+	notif("Arrow Spin", "Turned on", 1.5)
+elseif _G.s == false then
+	notif("Arrow Spin", "Turned off", 1.5)
+end
 
 while _G.s do
 	for arrow in arrow_spinner do
