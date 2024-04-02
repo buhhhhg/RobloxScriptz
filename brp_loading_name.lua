@@ -9,14 +9,14 @@ local function setname(name)
 end
 
 arrow_spinner = {
-	"←",
-	"↖",
-	"↑",
-	"↗",
-	"→",
-	"↘",
-	"↓",
-	"↙"
+	"⬆️ ",
+	"↗️ ",
+	"➡️ ",
+	"↘️ ",
+	"⬇️ ",
+	"↙️ ",
+	"⬅️ ",
+	"↖️ "
 }
 
 while _G.s do
