@@ -16,15 +16,19 @@ function notif(title, desc, dur)
 	})
 end
 
-arrow_spinner = {
-	"⬆️ ",
-	"↗️ ",
-	"➡️ ",
-	"↘️ ",
-	"⬇️ ",
-	"↙️ ",
-	"⬅️ ",
-	"↖️ "
+spinner = {
+	"🕛 ",
+	"🕐 ",
+	"🕑 ",
+	"🕒 ",
+	"🕓 ",
+	"🕔 ",
+	"🕕 ",
+	"🕖 ",
+	"🕗 ",
+	"🕘 ",
+	"🕙 ",
+	"🕚 "
 }
 
 if _G.s == true then
@@ -34,7 +38,7 @@ elseif _G.s == false then
 end
 
 while _G.s do
-	for unused,arrow in arrow_spinner do
+	for unused,arrow in spinner do
 		setname(_G.name .. arrow)
 	end
 	wait(_G.delay)
