@@ -29,7 +29,7 @@ character = game.Players.LocalPlayer.Character
 
 for i,v in levels do
 	character.HumanoidRootPart.CFrame = workspace["TowersModel"][v]["EndPortal"]["Field"].CFrame
-	wait()
+	wait(1.5)
 end
 
 notif("Buh.", "Finished all stages", 3)
