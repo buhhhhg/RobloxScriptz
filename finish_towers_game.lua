@@ -28,7 +28,7 @@ notif("Credits", "Script made by k5utils on discord", 3)
 character = game.Players.LocalPlayer.Character
 
 for i,v in levels do
-	character.HumanoidRootPart.CFrame = workspace["TowersModel"][v]["EndPortal"].CFrame
+	character.HumanoidRootPart.CFrame = workspace["TowersModel"][v]["EndPortal"]["Field"].CFrame
 	wait()
 end
 
