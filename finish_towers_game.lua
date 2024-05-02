@@ -26,7 +26,7 @@ end
 notif("Credits", "Script made by k5utils on discord", 3)
 
 for i,v in levels do
-	firetouchinterest(workspace["TowersModel"][v]["EndPortal"]["Field"]["TouchInterest"])
+	firetouchinterest(workspace["TowersModel"][v]["EndPortal"]["Field"])
 	wait()
 end
 
