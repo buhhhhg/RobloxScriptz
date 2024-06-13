@@ -1,13 +1,12 @@
---[[
-	Simple Chat Spy
-	Type "spy" to enable or disable the chat spy.
-	Only tested if this works executed with Synapse (should work with other exploits though)
---]]
-
-print("-- Chat Spy Executed --")
-print("Type \"spy\" to enable or disable the chat spy.")
-print("Only tested if this works executed with Synapse (should work with other exploits though)")
-print("https://github.com/dehoisted/Chat-Spy")
+print("┌─────────────────────────────────────────────────┐")
+print("│               Chat Spy Executed                 │")
+print("│                                                 │")
+print("│ Type \"spy\" to enable or disable the chat spy. │")
+print("│                                                 │")
+print("│ https://github.com/dehoisted/Chat-Spy           │")
+print("│ https://github.com/buhhhhg/RobloxScriptz        │")
+print("└─────────────────────────────────────────────────┘")
+print('')
 
 -- Config
 Config = {
@@ -30,11 +29,16 @@ local player = Players.LocalPlayer
 
 local IsLegacy = (game:GetService("TextChatService").ChatVersion == Enum.ChatVersion.LegacyChatService)
 local saymsg = game:GetService("ReplicatedStorage"):FindFirstChild("SayMessageRequest", true)
-local Channel = not IsLegacy and game:GetService("TextChatService").TextChannels.RBXGeneral
+local Channel = not IsLegacy and game:GetService("TextChatService"):WaitForChild("TextChannels").RBXGeneral
+local SystemChannel = game:GetService("TextChatService"):WaitForChild("TextChannels"):WaitForChild("RBXSystem")
 
 local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
 local instance = (_G.chatSpyInstance or 0) + 1
 _G.chatSpyInstance = instance
+
+local function generateSystemMessage(MsgDict: array)
+	return '<font color="#'..MsgDict["Color"]..'"><font size="'..MsgDict["FontSize"]..'"><font face="'..MsgDict["Font"]..'">'..MsgDict["Text"]..'"</font></font></font>'
+end
 
 local function onChatted(p,msg)
 	if _G.chatSpyInstance == instance then
@@ -46,11 +50,14 @@ local function onChatted(p,msg)
 		elseif Config.enabled and (Config.spyOnMyself==true or p~=player) then
 			msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
 			local hidden = true
-			local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
-				if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and Config.public==false and Players[packet.FromSpeaker].Team==player.Team)) then
-					hidden = false
-				end
-			end)
+			if isLegacy then
+				local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+					if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and Config.public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+						hidden = false
+					end
+				end)
+			else
+				local conn = Players
 			wait(1)
 			conn:Disconnect()
 			if hidden and Config.enabled then
@@ -62,7 +69,16 @@ local function onChatted(p,msg)
 					end
 				else
 					PrivateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
-					StarterGui:SetCore("ChatMakeSystemMessage", PrivateProperties)
+					if isLegacy then
+						StarterGui:SetCore("ChatMakeSystemMessage", PrivateProperties)
+					else
+						SystemChannel:DisplaySystemMessage({
+							Text = PrivateProperties.Text,
+							Font = PrivateProperties.Font,
+							Color = PrivateProperties.Color,
+							FontSize = PrivateProperties.TextSize
+						})
+					end
 				end
 			end
 		end
