@@ -1,36 +1,33 @@
 function notify(title, description, duration)
 	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = title or '.',
+		Title = title or 'Food Generator',
 		Text = description or '',
-		Duration = duration or 3,
+		Duration = duration or 2,
 	})
 end
 
 if not game:IsLoaded() then
-	notify("Food Generator", "Waiting for the game to load..", 3)
+	notify("Food Generator", "Waiting for the game to load..", 2.5)
 	game.Loaded:Wait()
-	notify("Game loaded!")
+	notify("Food Generator", "Game has been loaded!", 1.9)
 end
 
--- setup vars
-food = {
-	workspace['SnackMachine']['Selection1']['ClickDetector'],
-	workspace['SnackMachine']['Selection2']['ClickDetector'],
-	workspace['SnackMachine']['Selection3']['ClickDetector'],
-	workspace['SnackMachine']['Selection4']['ClickDetector'], 
-	workspace['SnackMachine']['Selection5']['ClickDetector'],
-	workspace['SnackMachine']['Selection6']['ClickDetector'],
-	workspace['SnackMachine']['Selection7']['ClickDetector'],
-	workspace['SnackMachine']['Selection8']['ClickDetector']
-}
+food = {}
+for i=1,8 do
+	-- part = workspace['SnackMachine']['Selection'..tostring(i)]['ClickDetector']
+	part = workspace['SnackMachine']['Selection'..tostring(i)]
+	if part then
+		table.insert(food, part)
+	end
+end
 
--- setup players
 Players = game:GetService("Players")
 LocalPlayer = Players.LocalPlayer
 
 Character = LocalPlayer.Character
 
 Humanoid = Character.Humanoid
+HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 
 function grabtools()
 	for _, child in ipairs(workspace:GetChildren()) do
