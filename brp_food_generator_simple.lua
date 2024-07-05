@@ -8,8 +8,10 @@ end
 
 if not game:IsLoaded() then
 	notify("Food Generator", "Waiting for the game to load..", 2.5)
+	start_time = os.time()
 	game.Loaded:Wait()
-	notify("Food Generator", "Game has been loaded!", 1.9)
+	end_time = os.time()
+	notify("Food Generator", "Game loaded in "..tostring(end_time-start_time).."seconds", 1.9)
 end
 
 food = {}
@@ -18,6 +20,8 @@ for i=1,8 do
 	part = workspace['SnackMachine']['Selection'..tostring(i)]
 	if part then
 		table.insert(food, part)
+	else
+		notify(nil, "Selection #"..tostring(i).." not found!", 2)
 	end
 end
 
@@ -30,9 +34,9 @@ Humanoid = Character.Humanoid
 HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 
 function grabtools()
-	for _, child in ipairs(workspace:GetChildren()) do
-		if Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then
-			Humanoid:EquipTool(child)
+	for _, Tool in pairs(LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren()) do
+		if Tool:IsA("Tool") or Tool:IsA("HopperBin") then
+			Tool.Parent = Character
 		end
 	end
 end
@@ -57,16 +61,20 @@ notify("Credits", "Script made by k5utils on discord", 3)
 if game.PlaceId == 369152986 then
 	if fireclickdetector then
 		if _G.s then
-			for i=1,30 do
-				if _G.s == false then break end
-				run()
-				task.wait(2)
-			end
-			notify("Success", "Finished generating food", 2.5)
+			if #food == 8 then
+				for i=1,30 do
+					if _G.s == false then break end
+					run()
+					task.wait(2)
+				end
+				notify("Success", "Finished generating food", 2.5)
 
-			grabtools()
-			task.wait(1.1)
-			Humanoid:UnequipTools()
+				grabtools()
+				task.wait(1.1)
+				Humanoid:UnequipTools()
+			else
+				notify("Food Generator - Error", "Not enough vending machine parts found", 4)
+			end
 		end
 	else
 		notify("Unsupported Executor", "fireclickdetector is not supported on your executor!", 4)
