@@ -11,18 +11,18 @@ food = {
 }
 
 -- setup players
-plrs = game:GetService("Players")
-lp = plrs.LocalPlayer
+Players = game:GetService("Players")
+LocalPlayer = Players.LocalPlayer
 
-char = lp.Character
+Character = LocalPlayer.Character
 
-humanoid = char.Humanoid
-root = char:FindFirstChild("HumanoidRootPart")
+Humanoid = Character.Humanoid
+HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 
 function grabtools()
 	for _, child in ipairs(workspace:GetChildren()) do
-		if char and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then
-			humanoid:EquipTool(child)
+		if Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then
+			Humanoid:EquipTool(child)
 		end
 	end
 end
@@ -39,27 +39,37 @@ function run()
 	end
 end
 
-function notif(title, desc, dur)
+function notify(title, description, duration)
 	game:GetService("StarterGui"):SetCore("SendNotification",{
 		Title = title,
-		Text = desc,
-		Duration = dur,
+		Text = description,
+		Duration = duration,
 	})
 end
 
-notif("Credits", "Script made by k5utils on discord", 3)
+_G.s = not _G.s
+
+notify("Toggle", tostring(_G.s), 3,)
+notify("Credits", "Script made by k5utils on discord", 3)
 
 if game.PlaceId == 369152986 then
-	for i=1,30 do
-		run()
-		wait(2)
-	end
-	notif("Success", "Finished generating food", 2.5)
+	if fireclickdetector then
+		if _G.s then
+			for i=1,30 do
+				if _G.s == false then break end
+				run()
+				task.wait(2)
+			end
+			notify("Success", "Finished generating food", 2.5)
 
-	grabtools()
-	wait(1.1)
-	humanoid:UnequipTools()
+			grabtools()
+			task.wait(1.1)
+			Humanoid:UnequipTools()
+		end
+	else
+		notify("Unsupported Executor", "fireclickdetector is not supported on your executor!", 4)
+	end
 else
-	notif("Unsupported Game",'This game only works on:',4)
-	notif("Unsupported Game",'Bullying: A Roleplay Story',4)
+	notify("Unsupported Game",'This game only works on:',4)
+	notify("Unsupported Game",'Bullying: A Roleplay Story',4)
 end
