@@ -31,7 +31,6 @@ LocalPlayer = Players.LocalPlayer
 Character = LocalPlayer.Character
 
 Humanoid = Character.Humanoid
-HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 
 function grabtools()
 	for _, child in ipairs(workspace:GetChildren()) do
