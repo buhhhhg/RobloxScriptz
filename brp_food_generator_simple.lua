@@ -1,3 +1,17 @@
+function notify(title, description, duration)
+	game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = title or '.',
+		Text = description or '',
+		Duration = duration or 3,
+	})
+end
+
+if not game:IsLoaded() then
+	notify("Food Generator", "Waiting for the game to load..", 3)
+	game.Loaded:Wait()
+	notify("Game loaded!")
+end
+
 -- setup vars
 food = {
 	workspace['SnackMachine']['Selection1']['ClickDetector'],
@@ -37,14 +51,6 @@ function run()
 	for i,v in pairs(food) do
 		click(v)
 	end
-end
-
-function notify(title, description, duration)
-	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = title,
-		Text = description,
-		Duration = duration,
-	})
 end
 
 _G.s = not _G.s
