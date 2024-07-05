@@ -28,15 +28,15 @@ end
 Players = game:GetService("Players")
 LocalPlayer = Players.LocalPlayer
 
-Character = LocalPlayer.Character
+Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
 
 Humanoid = Character.Humanoid
 HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 
 function grabtools()
-	for _, Tool in pairs(LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren()) do
-		if Tool:IsA("Tool") or Tool:IsA("HopperBin") then
-			Tool.Parent = Character
+	for _, Tool in ipairs(workspace:GetChildren()) do
+		if Character and Tool:IsA("BackpackItem") and Tool:FindFirstChild("Handle") then
+			Humanoid:EquipTool(Tool)
 		end
 	end
 end
@@ -48,8 +48,8 @@ function click(detector)
 end
 
 function run()
-	for i,v in pairs(food) do
-		click(v)
+	for _, SelectionPart in ipairs(food) do
+		click(SelectionPart)
 	end
 end
 
