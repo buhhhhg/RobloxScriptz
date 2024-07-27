@@ -5,18 +5,12 @@ function main()
 
 	local Wm = library:Watermark("BRP Food Generator | Library Version " .. library.version ..  " | " .. library:GetUsername())
 
-
 	-- setup vars
-	food = {
-		workspace['SnackMachine']['Selection1']['ClickDetector'],
-		workspace['SnackMachine']['Selection2']['ClickDetector'],
-		workspace['SnackMachine']['Selection3']['ClickDetector'],
-		workspace['SnackMachine']['Selection4']['ClickDetector'], 
-		workspace['SnackMachine']['Selection5']['ClickDetector'],
-		workspace['SnackMachine']['Selection6']['ClickDetector'],
-		workspace['SnackMachine']['Selection7']['ClickDetector'],
-		workspace['SnackMachine']['Selection8']['ClickDetector']
-	}
+	food = {}
+
+	for i=1,8 do
+		table.insert(food, workspace['SnackMachine']['Selection'..tostring(i)]['ClickDetector'])
+	end
 
 	_G.s = false
 	_G.filter = 0
@@ -125,13 +119,12 @@ function main()
 
 	library:Introduction()
 	wait(1)
-	local Init = library:Init()
+	local Init = library:Init(Enum.KeyCode.PageUp)
 
 	local fs = Init:NewTab("Main Script")
 	local creds = fs:NewTab("Credits")
 
 	local Section1 = fs:NewSection("Script by `k5utils` on discord!")
-	Init:UpdateKeybind(Enum.KeyCode.PageUp)
 
 	local start = fs:NewToggle("Start/Stop script", false, function(value)
 		local vers = value and true or false
@@ -163,7 +156,7 @@ function main()
 		realrun()
 	end)
 
-	local dtools = fs:NewButton("Drop tools/food", function())
+	local dtools = fs:NewButton("Drop tools/food", function()
 		droptools()
 		wait()
 		Notif:Notify("Dropped tools!", 3, 'success')
